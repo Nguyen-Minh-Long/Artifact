@@ -1,17 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import Snowfall from 'react-snowfall'
+import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+
+
 
 ReactDOM.render(
   <React.StrictMode>
+    <Snowfall
+      //Positioning
+      style={{
+        position: 'fixed',
+        width: '100vw',
+        height: '100vh',
+      }}
+      // Controls the number of snowflakes that are created (default 150)
+      snowflakeCount={300}
+    />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
