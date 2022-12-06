@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../../index.css'
 
+
 function importAll(r) {
     let images = {};
     r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
@@ -15,6 +16,7 @@ function importAll(r) {
 
 const imagesChar = importAll(require.context('../../ImagesCharacter/', false, /\.(png|jpe?g|svg)$/));
 const imagesArts = importAll(require.context('../../ImagesArtifact/', false, /\.(png|jpe?g|svg)$/));
+const videoBG = importAll(require.context('../../VideoBG', false, /\.(mp4|mkv)$/));
 
 const Characters = {
   Ganyu: {
@@ -202,8 +204,8 @@ function Cryo() {
 
   return (
     <div>
-      <p style={{ fontSize: 20 }}><b style={{ color: 'red' }}>*Note:</b> Click on the command you want to use will automatically copy to Clipboard</p>
-      <Table striped bordered hover variant="dark" style={{ textAlign: "center" }}>
+      <video src={videoBG['Cryo.mp4'].default} autoPlay loop  muted/>
+      <Table striped bordered hover variant="dark" style={{backgroundColor: "transparent"}}>
         <thead>
           <tr>
             <th colSpan="4" style={{ color: '#aff8f6' }}>❄️❄️❄️ Best of Artifact - Cryo ❄️❄️❄️</th>

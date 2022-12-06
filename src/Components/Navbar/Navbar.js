@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import './Navbar.css';
+import '../../index.css'
 import { NavLink } from 'react-router-dom';
 import $ from 'jquery';
-import '@fortawesome/fontawesome-free/css/all.css';
+
 const Navbar = () => {
 
   function animation() {
@@ -43,8 +44,9 @@ const Navbar = () => {
 
   }, []);
 
+  
   return (
-    <nav className="navbar navbar-expand-lg navbar-mainbg" >
+    <nav className="navbar navbar-expand-lg navbar-mainbg">
 
       <NavLink className="navbar-brand navbar-logo" to="/" exact>
         Web Arifacts - TECH OTAKU SAVE THE WORLD

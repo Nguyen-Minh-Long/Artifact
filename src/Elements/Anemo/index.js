@@ -8,13 +8,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../../index.css'
 
 function importAll(r) {
-    let images = {};
-    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-    return images;
-  }
+  let images = {};
+  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+  return images;
+}
 
 const imagesChar = importAll(require.context('../../ImagesCharacter/', false, /\.(png|jpe?g|svg)$/));
 const imagesArts = importAll(require.context('../../ImagesArtifact/', false, /\.(png|jpe?g|svg)$/));
+const videoBG = importAll(require.context('../../VideoBG', false, /\.(mp4|mkv)$/));
 
 const Characters = {
   Xiao: {
@@ -186,7 +187,7 @@ function Anemo() {
               style={isActive === artifact.command ? {
                 color: "#00ff00",
                 paddingTop: "25px"
-              } : {paddingTop: "25px"}}
+              } : { paddingTop: "25px" }}
             >
               <p className="noselect">{artifact.command}</p></td>
           </CopyToClipboard>
@@ -202,8 +203,8 @@ function Anemo() {
 
   return (
     <div>
-      <p style={{ fontSize: 20 }}><b style={{ color: 'red' }}>*Note:</b> Click on the command you want to use will automatically copy to Clipboard</p>
-      <Table striped bordered hover variant="dark" style={{ textAlign: "center" }}>
+      <video src={videoBG['Anemo.mp4'].default} autoPlay loop  muted/>
+      <Table striped bordered hover variant="dark" style={{ backgroundColor: "transparent" }}>
         <thead>
           <tr>
             <th colSpan="4" style={{ color: '#aaf9e4' }}>💨💨💨 Best of Artifact - Ameno 💨💨💨</th>

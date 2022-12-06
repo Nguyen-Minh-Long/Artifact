@@ -97,7 +97,6 @@ function Cryo() {
 
   return (
     <div>
-      <p style={{ fontSize: 20 }}><b style={{ color: 'red' }}>*Note:</b> Click on the command you want to use will automatically copy to Clipboard</p>
       <Table striped bordered hover variant="dark" style={{ textAlign: "center" }}>
         <thead>
           <tr>

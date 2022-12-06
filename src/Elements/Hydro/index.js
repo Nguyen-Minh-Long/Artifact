@@ -15,6 +15,7 @@ function importAll(r) {
 
 const imagesChar = importAll(require.context('../../ImagesCharacter/', false, /\.(png|jpe?g|svg)$/));
 const imagesArts = importAll(require.context('../../ImagesArtifact/', false, /\.(png|jpe?g|svg)$/));
+const videoBG = importAll(require.context('../../VideoBG', false, /\.(mp4|mkv)$/));
 
 const Characters = {
   Yelan: {
@@ -307,8 +308,8 @@ function Hydro() {
 
   return (
     <div>
-      <p style={{ fontSize: 20 }}><b style={{ color: 'red' }}>*Note:</b> Click on the command you want to use will automatically copy to Clipboard</p>
-      <Table striped bordered hover variant="dark" style={{ textAlign: "center" }}>
+      <video src={videoBG['Hydro.mp4'].default} autoPlay loop  muted/>
+      <Table striped bordered hover variant="dark" style={{ backgroundColor: "transparent" }}>
         <thead>
           <tr>
             <th colSpan="4" style={{ color: '#06dcee' }}>💧💧💧 Best of Artifact - Hydro 💧💧💧</th>
